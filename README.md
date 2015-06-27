@@ -1,44 +1,77 @@
-Solar Theme for Jekyll
-======================
+Contrast
+========
 
-A stylish theme for [Jekyll](http://jekyllrb.com/) blogs, based on the [Solarized](http://ethanschoonover.com/solarized) color palette.
+[Demo](http://niklasbuschmann.github.io/contrast)
 
-![Screenshot](http://i.imgur.com/UnnRhkt.png)
-
-
-Features
--------
-
-* **Two color schemes** — One for Solarized Dark and one for Solarized Light. Just swap the reference to the `colors-dark.css` file with `colors-light.css` if you don't like light-on-dark.
-* **Linkblog support** — Solar will turn your post title into an external link if you add `external-url: http://example.org` to a post's YAML front matter.
-* **Responsive Design** — Solarized adapts to fit any screen size.
+![screenshot](https://cloud.githubusercontent.com/assets/4943215/5601369/f7d36d6c-92fa-11e4-85e3-752c270a91d3.png)
 
 
-Installation
---------------
+## Features
 
-There are two ways to use Solar. You can either clone-and-go, copying the repository and tweaking the contents to taste, or you can cherry-pick the files you want and integrate them into an existing Jekyll instance. 
+ - mobile first
+ - syntax highlighting
+ - [disqus](https://disqus.com/) / [isso](http://posativ.org/isso/) integration
+ - customizable
+ - valid HTML5
 
-If you're starting a new blog, you want to clone-and-go. Just `git clone https://github.com/redwallhp/solar-theme-jekyll.git`, make any changes you want to the template, pages or `_config.yml` and start blogging with Jekyll. Easy.
+Please note: Create a *master*-branch if you want to use this theme with *.github.io.
 
-If you're wanting to replace the theme of an existing Jekyll blog, either option should work. If you want to replace files individually, the files and directories you want to make sure to copy are:
+## Getting Started
 
-1. `_layouts`
-2. `archives`
-3. `assets`
-4. `feed.xml`
-5. `index.xml`
+If you're completely new to Jekyll, I recommend checking out the documentation at <http://jekyllrb.com> or there's a tutorial by [Smashing Magazine](http://www.smashingmagazine.com/2014/08/01/build-blog-jekyll-github-pages/).
 
-You'll also want to compare Solar's `_config.yml` with your own, making any appropriate changes.
+### Installing Jekyll
 
+If you don't have Jekyll already installed, you will need to go ahead and do that.
 
-Demo
--------
+```
+$ gem install jekyll
+```
 
-You can see a demo of Solar [right here on GitHub Pages.](http://mattvh.github.io/solar-theme-jekyll/)
+#### Verify your Jekyll version
 
+It's important to also check your version of Jekyll since this project uses Native Sass which
+is [only supported by 2.0+](http://jekyllrb.com/news/2014/05/06/jekyll-turns-2-0-0/).
 
-License
----------
+```
+$ jekyll -v
+# This should be jekyll 2.0.0 or later
+```
 
-GPLv2 or higher
+### Fork, then clone
+
+Fork the repo, and then clone it so you've got the code locally.
+
+### Modify the _config.yml
+
+The `_config.yml` located in the root of the Pixyll directory contains all of the configuration details
+for the Jekyll site.
+
+### Jekyll Serve
+
+Then, start the Jekyll Server. I always like to give the `--watch` option so it updates the generated HTML when I make changes.
+
+```
+$ jekyll serve --watch
+```
+
+Now you can navigate to `localhost:4000` in your browser to see the site.
+
+### Using Github Pages
+
+You can host your Jekyll site for free with Github Pages. [Click here](https://pages.github.com/) for more information.
+
+## License
+
+This project is licensed under the terms of the MIT license.
+
+## Thanks to the following:
+
+* [Jekyll](http://jekyllrb.com)
+* [Github Pages](https://pages.github.com/)
+* [Richard Leland: pygment](https://github.com/richleland/pygments-css)
+* [mrdoob: three.js](https://github.com/mrdoob/three.js/)
+* [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
+* [Paul D. Hunt: Source Sans Pro](https://plus.google.com/108888178732927400671/about)
+* [Victor Gaultney: Gentium Basic](https://profiles.google.com/victorgaultneytype/about)
+* [John Otander: Pixyll](https://github.com/johnotander/pixyll/)
