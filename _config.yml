@@ -1,5 +1,5 @@
-name: Wangana
-description:  Jekyll theme
+name: 清风影
+description:  涧水潺湲
 
 sass:
   sass_dir: assets/css/_sass
@@ -20,4 +20,4 @@ owner:
 ga_id: #
 ga_username: #
 
-timezone: Africa/Accra
+timezone: Asia/Shanghai
