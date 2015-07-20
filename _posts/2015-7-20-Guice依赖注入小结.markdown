@@ -54,7 +54,7 @@ public static void main(String[] args)
 }
 ```
 main函数执行结果如下：
-![](assets/images/guice-1.png)
+![](/assets/images/guice-1.png)
 
 ## 绑定的类型
 ### 链式绑定（Linked Binding）
