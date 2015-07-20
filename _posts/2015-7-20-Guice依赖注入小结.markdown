@@ -143,12 +143,6 @@ public class JdbcConfigService
 ```
 public class MessageServiceModule extends AbstractModule
 {
-	@Override
-	protected void configure()
-	{
-		......
-	}
-
 	@Provides
 	MessageService provideMsgService()
 	{
