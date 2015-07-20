@@ -5,10 +5,10 @@ date: 2015-07-20
 comments: true
 archive: true
 ---
-# Guice依赖注入小结
 Guice是一个轻量级的依赖注入框架。依赖注入是一种设计模式，它的核心思想是行为与依赖解析相分离，从而使得代码模块化并且易于测试。
 相比于Spring依赖注入，Guice更轻量级。Guice没有使用XML配置，而是直接使用注解和代码对依赖和绑定关系进行管理。它采用懒加载的方式使得应用启动更快，使用Module对绑定关系进行管理方便了应用的模块化开发。
 ## 简单示例
+
 ```
 public interface MessageService
 {
@@ -54,7 +54,7 @@ public static void main(String[] args)
 }
 ```
 main函数执行结果如下：
-![](images/guice-1.png)
+![](assets/images/guice-1.png)
 
 ## 绑定的类型
 ### 链式绑定（Linked Binding）
@@ -98,17 +98,20 @@ public class MessageServiceModule extends AbstractModule
 
 ### 实例绑定（Instance binding）
 我们可以绑定一个类型到它的一个特定实例，这种情况仅适合于没有其它任何依赖的类型。
+
 ```
 bind(String.class).annotatedWith(Names.named("JDBC-URL")).toInstance("jdbc:mysql://localhost/watoud");
 bind(Integer.class).annotatedWith(Names.named("login-timeout-seconds")).toInstance(10);
-
 ```
 接下来可以像下面这样直接获取，
+
 ```
 injector.getInstance(Key.get(String.class, Names.named("JDBC-URL")));
 injector.getInstance(Key.get(int.class,Names.named("login-timeout-seconds")));
 ```
+
 也可以在其它对象中注入这些值。
+
 ```
 public class JdbcConfigService
 {
@@ -131,6 +134,7 @@ public class JdbcConfigService
 	}
 }
 ```
+
 尽量避免对复杂的对象进行实例绑定，因为这样会降低应用程序的启动速度，这种情况可以使用```@Provides```注解的方法进行替代。
 ### @Provides方法（@Provides Methods）
 @Provides方法必须定义在module里面，并且必须拥有@Provides注解，这个方法返回的类型就是它绑定的类型。当注解器需要这个类型的一个实例时，它将调用这个方法。
@@ -151,6 +155,7 @@ public class MessageServiceModule extends AbstractModule
 	}
 }
 ```
+
 如果@Provides方法标有绑定注解，Guice将会绑定注解类型，依赖项可以通过这个方法的参数传递进来。在调用这个方法之前，注解器会先进行绑定。
 ```
 public class JdbcServiceModule extends AbstractModule
@@ -466,6 +471,7 @@ bind(Applebees.class).in(Singleton.class);
 
 ## 面向切面编程
 Guice在实现依赖注入的同时还支持面向切面编程。面向切面编程适合于横向关注点，比如事物、安全和日志。使用Guice实现面向切面比较简单，只需要选择匹配的类型和方法，创建一个拦截器并且在module中配置就好了。
+
 ```
 public class MessageIntercepter implements MethodInterceptor
 {
@@ -485,6 +491,7 @@ protected void configure()
 	bindInterceptor(Matchers.any(), Matchers.any(), new MessageIntercepter());
 }
 ```
+
 Guice面向切面编程具有一些限制。
 
 - 类必须是public或者package-private
