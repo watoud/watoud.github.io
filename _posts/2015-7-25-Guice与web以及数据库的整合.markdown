@@ -361,7 +361,7 @@ public class HelloWorldServlet extends HttpServlet
 ```
 
 7.打包并运行
-使用maven命令打包并在tomcat中运行，就能在浏览器中看到如下所示结果了。
+使用maven命令打包并在tomcat中运行，就能在浏览器中看到如下所示结果了。   
 ![](/assets/images/guice-mybatis.png)
 
 ### 参考资料
