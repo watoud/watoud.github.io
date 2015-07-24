@@ -1,3 +1,6 @@
+encoding: UTF-8
+markdown: rdiscount
+
 name: 涧水潺湲
 description: 不知者众，唯学而已
 
@@ -19,5 +22,6 @@ owner:
 
 ga_id: #
 ga_username: #
+
 
 timezone: Asia/Shanghai
