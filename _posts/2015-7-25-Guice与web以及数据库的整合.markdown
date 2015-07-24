@@ -6,8 +6,9 @@ comments: true
 archive: true
 ---
 ### Guice与web的整合
-1. 创建web工程
+1. 创建web工程    
 首先在eclipse中创建一个maven工程，修改工程中的pom.xml文件，在project节点下面添加```<packaging>war</packaging>```。然后在src/main目录下依次创建webapp/WEB-INF目录，再在WEB-INF目录下创建web.xml文件。这样一个使用maven进行依赖管理的web工程就搭建起来了，工程创建好后的目录结构如下图所示。
+
 ![](/assets/images/guice-web.png)
 
 2.在pom.xml中添加maven依赖配置
@@ -103,7 +104,7 @@ public class ServiceModule extends AbstractModule
 }
 ```
 
-6.配置ServletContextListener
+6.配置ServletContextListener    
 首先继承GuiceServletContextListener配置所需的module，
 
 ```
@@ -184,8 +185,7 @@ public class DataSourceProvider implements Provider<DataSource>
 
 	@Inject
 	public DataSourceProvider(@Named("jdbc_url") String url,
-	        @Named("jdbc_username") String username, @Named("jdbc_passwd") String passwd,
-	        @Named("jdbc_driver") String driver)
+	        @Named("jdbc_username") String username, @Named("jdbc_passwd") String passwd, @Named("jdbc_driver") String driver)
 	{
 		dataSource = new BasicDataSource();
 		dataSource.setUrl(url);
@@ -365,5 +365,5 @@ public class HelloWorldServlet extends HttpServlet
 ![](/assets/images/guice-mybatis.png)
 
 ### 参考资料
-Guice与web整合:[https://github.com/google/guice/wiki/Servlets](https://github.com/google/guice/wiki/Servlets)
+Guice与web整合:[https://github.com/google/guice/wiki/Servlets](https://github.com/google/guice/wiki/Servlets)    
 Guice与mybatis整合:[http://mybatis.github.io/guice/core.html](http://mybatis.github.io/guice/core.html)
