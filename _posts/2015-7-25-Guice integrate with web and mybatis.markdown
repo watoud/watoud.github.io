@@ -4,6 +4,7 @@ title: Guice与web以及mybatis的整合
 date: 2015-07-25
 comments: true
 archive: true
+tags: guice
 ---
 ### Guice与web的整合
 1. 创建web工程    
