@@ -31,3 +31,4 @@ setlocal disabledelayedexpansion
 
 %RUN_JAVA% %MAINCLASS% -classpath "%CLASSPATH%"
 ```
+注意脚本中的延迟变量赋值
