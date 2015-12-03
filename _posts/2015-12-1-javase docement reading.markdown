@@ -13,11 +13,11 @@ tag: [concurrency]
 for (int i = 0; i < importantInfo.length; i++)
 {
     // Pause for 4 seconds
-    try 
+    try
     {
         Thread.sleep(4000);
-    } 
-    catch (InterruptedException e) 
+    }
+    catch (InterruptedException e)
     {
         // We've been interrupted: no more messages.
         return;
@@ -63,7 +63,14 @@ if (Thread.interrupted())
 <br/>
 原子操作。如下两类操作可以看成是原子操作：1.对引用变量以及原始变量(long以及double除外)的读写操作是原子的，2.对所有声明为volatile的变量(包括long以及double)的读写操作是原子的。
 
+### 设计不可变对象
+1. 不提供setter方法
+2. 所有字段加上final以及private修饰符
+3. 避免子类对方法进行重载。可以对类加上final标记，或者把构造方法设置成私有的而提供工厂方法
+4. 如果字段的值是对可变对象的引用，那么需要避免对该可变对象进行修改。一方面不提供修改可变对象的方法，另一方面避免把可变对象的引用逸出。
 
+### 高级并发对象
+1.Lock对象比隐式锁(内部锁或者监视器锁)优越的地方：可以在获取不到锁的时候放弃。Lock对象有tryLock方法，可以在获取不到锁的时候立即返回，或者超时后返回；另外一方面，lockInterruptibly也允许在锁尚未获取的时候被其它线程中断。
 
 
 
