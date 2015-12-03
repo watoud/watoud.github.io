@@ -72,6 +72,5 @@ if (Thread.interrupted())
 ### 高级并发对象
 1.Lock对象比隐式锁(内部锁或者监视器锁)优越的地方：可以在获取不到锁的时候放弃。Lock对象有tryLock方法，可以在获取不到锁的时候立即返回，或者超时后返回；另外一方面，lockInterruptibly也允许在锁尚未获取的时候被其它线程中断。
 
-
-
-
+### 参考资料
+http://docs.oracle.com/javase/tutorial/essential/concurrency/index.html
