@@ -34,10 +34,9 @@ jcmd *processId* Thread.print 		查看线程堆栈信息<br/>
 获取堆转储文件：<b> jmap -dump:format=b,file=es.dump *pid*  </b> <br/>
 	<center> ![获取转储文件](/assets/images/jdkTools/jmap/jmap-dump.png) </center> <br/>
 查看堆信息：<b> jmap -heap *pid* </b>  <br/>
-	<center> ![获取堆信息](/assets/images/jdkTools/jmap/jmap-heap.png) </center> <br/>
-
+	<center> ![获取堆信息](/assets/images/jdkTools/jmap/jmap-heap.png)  </center> <br/>
 <center>
-
+-----------------------------------------------
 | 堆配置项     | 说明              |参数设置 |
 | :------------- | :---------------- | :---------- |
 | MaxHeapSize   | JVM堆的最大大小| -XX:MaxHeapSize= |
@@ -47,8 +46,18 @@ jcmd *processId* Thread.print 		查看线程堆栈信息<br/>
 | NewRatio  | 新生代和老生代的大小比率 | -XX:NewRatio= |
 | SurvivorRatio | Eden区与Survivor区的比值 | -XX:SurvivorRatio= |
 | MetaspaceSize(jdk8) | Metaspace使用的是本地<br/>内存而不是堆内存| -XX:MetaspaceSize= |
-
-
 </center>
+除了查看堆栈信息之外，jmap还没用来查看堆中类的统计信息<br/>
+查看类信息：<b> jmap -histo *pid* <br/>   </b>
+	<center> ![查看histo信息](/assets/images/jdkTools/jmap/jmap-histo.png) </center> <br/>
+查看类加载器统计信息: <b> jmap -clstats *pid* </b>
+	<center> ![类加载器信息](/assets/images/jdkTools/jmap/jmap-clstats.png) </center> <br/>
+
+4. jinfo: 获取Java进程的配置信息 <br/>
+获取Java进程的配置信息： <b> jinfo *pid* </b> <br/>
+	<center> ![Java进程配置信息](/assets/images/jdkTools/jinfo/jinfo.png) </center> <br/>
+
+
+
 
 
