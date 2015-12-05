@@ -8,9 +8,10 @@ tag: [troubleshooting ]
 ---
 ### Java启动参数配置
 1. 使用core文件。linux系统下使用```ulimit -c unlimited```
-2. 添加-XX:+HeapDumpOnOutOfMemoryError虚拟机标志.<br/>
+2. 添加-XX:+HeapDumpOnOutOfMemoryError jvm配置项<br/>
 ```-XX:+HeapDumpOnOutOfMemoryError  -XX:HeapDumpPath=${path\to\file}```
-3. 在Java命令行添加参数```-verbose:gc```，日志会打印到控制台上，与```-Xloggc:${path\to\file}```共存时，以后者为准
+3. 在Java命令行添加参数```-verbose:gc```，日志会打印到控制台上 <br/>
+```-Xloggc:${path\to\file}```，日志打印到目标文件
 
 ### 诊断工具
 1. jps:查看系统java进程信息<br/>
