@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Java故障排查指南
+title: Java故障排查指南之工具篇
 date: 2015-12-03
 comments: true
 archive: true
@@ -18,11 +18,36 @@ tag: [troubleshooting ]
 -m 输出main method的参数<br/>
 -v 输出jvm参数<br/>
 -l 输出完全的包名，应用主类名，jar的完全路径名 <br/>
-<br/>
+<center> ![jcmd帮助命令](/assets/images/jdkTools/jps/jps-lvm.png) </center>
+
 2. jcmd:用于向jvm发送诊断信息<br/>
 -l 列出所有java虚拟机信息	<br/>
--help 列出该虚拟机支持的所有命令. eg: jcmd *processId* help. 查看当前jvm支持的命令之后，就可以知道能够使用那些命令了. 比如：<br/>
+-help 列出该虚拟机支持的所有命令. eg: <b> jcmd *processId* help </b>  <br/>
+	<center> ![jcmd帮助命令](/assets/images/jdkTools/jcmd/jcmd-help.png) </center> <br/>
+查看当前jvm支持的命令之后，就可以知道能够使用那些命令了. 比如：<br/>
 jcmd *processId* VM.uptime  		查看系统运行时间<br/>
 jcmd *processId* Thread.print 		查看线程堆栈信息<br/>
-详细使用说明见链接    
-http://docs.oracle.com/javase/8/docs/technotes/guides/troubleshoot/tooldescr006.html#BABEHABG
+详细使用说明见文档:[http://docs.oracle.com/javase/8/docs/technotes/guides/troubleshoot/tooldescr006.html#BABEHABG](http://docs.oracle.com/javase/8/docs/technotes/guides/troubleshoot/tooldescr006.html#BABEHABG)
+
+3. jmap：统计内存相关信息<br/>
+获取堆转储文件：<b> jmap -dump:format=b,file=es.dump *pid*  </b> <br/>
+	<center> ![获取转储文件](/assets/images/jdkTools/jmap/jmap-dump.png) </center> <br/>
+查看堆信息：<b> jmap -heap *pid* </b>  <br/>
+	<center> ![获取堆信息](/assets/images/jdkTools/jmap/jmap-heap.png) </center> <br/>
+
+<center>
+
+| 堆配置项     | 说明              |参数设置 |
+| :------------- | :---------------- | :---------- |
+| MaxHeapSize   | JVM堆的最大大小| -XX:MaxHeapSize= |
+| NewSize       | 新生代大小      | -XX:NewSize= |
+| MaxNewSize   | 新生代最大大小  | -XX:MaxNewSize= |
+| OldSize  | 老生代大小| -XX:OldSize= |
+| NewRatio  | 新生代和老生代的大小比率 | -XX:NewRatio= |
+| SurvivorRatio | Eden区与Survivor区的比值 | -XX:SurvivorRatio= |
+| MetaspaceSize(jdk8) | Metaspace使用的是本地<br/>内存而不是堆内存| -XX:MetaspaceSize= |
+
+
+</center>
+
+

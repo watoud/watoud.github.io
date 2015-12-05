@@ -1,16 +1,14 @@
-encoding: UTF-8
-markdown: rdiscount
+markdown: redcarpet
+redcarpet:
+  extensions: ["highlight", "tables", "with_toc_data",  "underline", "fenced_code_blocks", "autolink", "strikethrough", "superscript"]
 
+encoding: UTF-8
 name: 涧水潺湲
 description: 不知者众，唯学而已
 
 sass:
   sass_dir: assets/css/_sass
   style: :compressed
-
-markdown: redcarpet
-redcarpet:
-  extensions: ["no_intra_emphasis", "tables", "fenced_code_blocks", "autolink", "strikethrough", "superscript"]
 
 url: #
 permalink: /:year/:month/:title/
