@@ -57,7 +57,23 @@ jcmd *processId* Thread.print 		查看线程堆栈信息<br/>
 获取Java进程的配置信息： <b> jinfo *pid* </b> <br/>
 	<center> ![Java进程配置信息](/assets/images/jdkTools/jinfo/jinfo.png) </center> <br/>
 
+5. jhat：分析Java堆,以html的形式显示出来 <br/>
+执行命令： <b> jhat */dump/file/path*  </b> <br/>
+	<center> ![Jhat读取dump文件](/assets/images/jdkTools/jhat/jhat-server.png) </center> <br/>
+之后就可以使用浏览器在本地查看Java分析信息了 <br/>
+	<center> ![浏览dump信息](/assets/images/jdkTools/jhat/jhat-client.png) </center> <br/>
+我们可以从页面上查询所有的类、根对象、对象实例数等等 <br/>
+	<center> ![浏览实例信息](/assets/images/jdkTools/jhat/jhat-instance.png) </center> <br/>
+堆dump文件的分析,除了使用jdk自带的jhat外，还可以用Eclipse MAT工具 <br/>
 
+6. jstat：获取JVM性能以及资源消耗信息 <br/>
+查看GC信息：<b>  jstat -gcutil *pid* *interval* *count* </b> <br/>
+	<center> ![浏览实例信息](/assets/images/jdkTools/jstat/jstat-gcutil.png) </center> <br/>
+查看元空间信息：<b>  jstat -gcmetacapacity *pid* *interval* *count* </b> <br/>
+ 	<center> ![浏览实例信息](/assets/images/jdkTools/jstat/jstat-metaspace.png) </center> <br/>
 
-
-
+<div align="right" >
+<font color="purple">
+<i><b>详细说明请见官方文档</b></i>
+</font>
+</div>
