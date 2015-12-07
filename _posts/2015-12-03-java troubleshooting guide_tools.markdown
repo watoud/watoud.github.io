@@ -4,7 +4,7 @@ title: Java故障排查指南之工具篇
 date: 2015-12-03
 comments: true
 archive: true
-tag: [troubleshooting ]
+tag: [tools]
 ---
 ### Java启动参数配置
 1. 使用core文件。linux系统下使用```ulimit -c unlimited```
