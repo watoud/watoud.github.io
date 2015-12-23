@@ -1,6 +1,6 @@
 ---
 layout: post
-title: JavaScript之变量与类型
+title: JavaScript之变量与类型小记
 date: 2015-12-16
 comments: true
 archive: true
@@ -210,6 +210,9 @@ console.log(foo[2]);   // two
 console.log(foo["a"]); // alpha
 console.log(foo["2"]); // two
 ```
+
+### 阅读资料
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types
 
 
 
