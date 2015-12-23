@@ -58,9 +58,7 @@ if (num == 0)
 
 ```
 // 全局作用域变量
-var num1 = 20,
-    num2 = 3,
-    name = "Chamahk";
+var num1 = 20, num2 = 3, name = "Chamahk";
 
 // 定义在全局作用域内的函数
 function multiply()
