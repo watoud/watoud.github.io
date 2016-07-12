@@ -54,6 +54,7 @@ public static void main(String[] args)
 	System.out.println(msgService.acquireMsg());
 }
 ```
+
 main函数执行结果如下：
 ![](/assets/images/guice-1.png)
 
@@ -67,7 +68,7 @@ public class MessageServiceModule extends AbstractModule
 	@Override
 	protected void configure()
 	{
-		bind(MessageService.class).to(HelloWorldService.class).in(Singleton.class);
+		bind(MessageService.class).to(HelloWorldService.class).in(Singleton.class444);
 	}
 }
 ```
@@ -484,7 +485,7 @@ Guice默认每次返回一个新的实例，这个可以通过作用域来控制
 + @RequestScoped：一个请求
 
 作用域的配置有两种方法，一种是在类上使用注解```@Singleton```;另一种是在绑定语句中指定作用域，比如
-```bind(MessageService.class).to(HelloWorldService.class).in(Singleton.class);```
+bind(MessageService.class).to(HelloWorldService.class).in(Singleton.class);
 如果同一个类型的作用域类型发生了冲突，将会使用绑定语句中的作用域。
 
 需要注意一点的是，在链式绑定的作用域配置中，作用域是作用在绑定语句中的源类型上而非目标类型。假设类型Applebees实现了两个接口Bar以及Grill，下面这个绑定将产生两个Applebees实例，一个用于Bar，一个用于Grill。

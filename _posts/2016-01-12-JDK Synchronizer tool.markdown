@@ -29,3 +29,28 @@ JDK提供的常用同步工具类在实现上都用到了抽象类```AbstractQue
 <br/>
 ![](/assets/images/AQS/AQS-3.png)
 
+抽象类```AbstractQueuedSynchronizer```使用```volatile```、```CAS```以及队列提供了一个同步操作框架，JDK中的锁以及其它几个同步工具都是基于```AbstractQueuedSynchronizer```实现的。 <br/>
+
+首先看下```AbstractQueuedSynchronizer```的字段。
+
+```
+ 	/**
+     *	头节点
+     */
+    private transient volatile Node head;
+
+    /**
+	 *	尾节点
+     */
+    private transient volatile Node tail;
+
+    /**
+     * 同步状态值
+     */
+    private volatile int state;
+```
+
+这个三个字段都使用volatile进行了修饰，因为三个字段值会被不同的线程进行修改，使用volatile能保证字段值在不同线程之间都是可见的。其中state使用volatile进行修饰，还用到了volatile的happens-before关系的副作用。在使用同步工具的时候，都会有类似lock以及unlock的成对操作，而lock以及unlock的happens-before关系就是依赖对volatile修饰的state的操作来实现的。lock的时候，
+
+
+

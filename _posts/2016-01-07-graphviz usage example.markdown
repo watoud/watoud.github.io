@@ -1,10 +1,9 @@
 ---
 layout: post
 title: graphviz使用简介
-date: 2016-01-07
-comments: true
-archive: true
-tag: [graphviz]
+tags:
+- graphviz
+categories: graphviz
 ---
 
 ### 有向图及其属性设置
