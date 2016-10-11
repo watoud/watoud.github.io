@@ -23,11 +23,10 @@ Lock虽然在使用使用上比Synchronized灵活许多，但是Synchronized相�
 
 ### 同步工具类的实现
 JDK提供的常用同步工具类在实现上都用到了抽象类```AbstractQueuedSynchronizer```，下面重点分析下该类的实现细节。<br/>
-<center>
-![](/assets/images/AQS/AQS-1.png) ![](/assets/images/AQS/AQS-2.png)
-</center>
-<br/>
-![](/assets/images/AQS/AQS-3.png)
+
+![aa](/images/watoud/AQS/AQS-1.png)      ![bb](/images/watoud/AQS/AQS-2.png)
+
+![cc](/images/watoud/AQS/AQS-3.png)
 
 抽象类```AbstractQueuedSynchronizer```使用```volatile```、```CAS```以及队列提供了一个同步操作框架，JDK中的锁以及其它几个同步工具都是基于```AbstractQueuedSynchronizer```实现的。 <br/>
 

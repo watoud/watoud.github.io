@@ -8,6 +8,7 @@ tags: guice
 ---
 Guice是一个轻量级的依赖注入框架。依赖注入是一种设计模式，它的核心思想是行为与依赖解析相分离，从而使得代码模块化并且易于测试。
 相比于Spring依赖注入，Guice更轻量级。Guice没有使用XML配置，而是直接使用注解和代码对依赖和绑定关系进行管理。它采用懒加载的方式使得应用启动更快，使用Module对绑定关系进行管理方便了应用的模块化开发。
+
 ## 简单示例
 
 ```
@@ -56,7 +57,7 @@ public static void main(String[] args)
 ```
 
 main函数执行结果如下：
-![](/assets/images/guice-1.png)
+![](/images/watoud/guice-1.png)
 
 ## 绑定的类型
 ### 链式绑定（Linked Binding）

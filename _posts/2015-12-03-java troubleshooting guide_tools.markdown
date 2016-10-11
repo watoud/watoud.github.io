@@ -19,12 +19,12 @@ tag: [tools]
 -m 输出main method的参数<br/>
 -v 输出jvm参数<br/>
 -l 输出完全的包名，应用主类名，jar的完全路径名 <br/>
-<center> ![jcmd帮助命令](/assets/images/jdkTools/jps/jps-lvm.png) </center>
+  ![jcmd帮助命令](/images/watoud/jdkTools/jps/jps-lvm.png)  
 
 2. jcmd:用于向jvm发送诊断信息<br/>
 -l 列出所有java虚拟机信息	<br/>
 -help 列出该虚拟机支持的所有命令. eg: <b> jcmd *processId* help </b>  <br/>
-	<center> ![jcmd帮助命令](/assets/images/jdkTools/jcmd/jcmd-help.png) </center> <br/>
+	  ![jcmd帮助命令](/images/watoud/jdkTools/jcmd/jcmd-help.png)   <br/>
 查看当前jvm支持的命令之后，就可以知道能够使用那些命令了. 比如：<br/>
 jcmd *processId* VM.uptime  		查看系统运行时间<br/>
 jcmd *processId* Thread.print 		查看线程堆栈信息<br/>
@@ -32,11 +32,11 @@ jcmd *processId* Thread.print 		查看线程堆栈信息<br/>
 
 3. jmap：统计内存相关信息<br/>
 获取堆转储文件：<b> jmap -dump:format=b,file=es.dump *pid*  </b> <br/>
-	<center> ![获取转储文件](/assets/images/jdkTools/jmap/jmap-dump.png) </center> <br/>
+	  ![获取转储文件](/images/watoud/jdkTools/jmap/jmap-dump.png)   <br/>
 查看堆信息：<b> jmap -heap *pid* </b>  <br/>
-	<center> ![获取堆信息](/assets/images/jdkTools/jmap/jmap-heap.png)  </center> <br/>
-<center>
------------------------------------------------
+	 ![获取堆信息](/images/watoud/jdkTools/jmap/jmap-heap.png)   <br/>
+
+ 
 | 堆配置项     | 说明              |参数设置 |
 | :------------- | :---------------- | :---------- |
 | MaxHeapSize   | JVM堆的最大大小| -XX:MaxHeapSize= |
@@ -46,31 +46,31 @@ jcmd *processId* Thread.print 		查看线程堆栈信息<br/>
 | NewRatio  | 新生代和老生代的大小比率 | -XX:NewRatio= |
 | SurvivorRatio | Eden区与Survivor区的比值 | -XX:SurvivorRatio= |
 | MetaspaceSize(jdk8) | Metaspace使用的是本地<br/>内存而不是堆内存| -XX:MetaspaceSize= |
-</center>
+
 除了查看堆栈信息之外，jmap还没用来查看堆中类的统计信息<br/>
 查看类信息：<b> jmap -histo *pid* <br/>   </b>
-	<center> ![查看histo信息](/assets/images/jdkTools/jmap/jmap-histo.png) </center> <br/>
+	  ![查看histo信息](/images/watoud/jdkTools/jmap/jmap-histo.png)  <br/>
 查看类加载器统计信息: <b> jmap -clstats *pid* </b>
-	<center> ![类加载器信息](/assets/images/jdkTools/jmap/jmap-clstats.png) </center> <br/>
+	  ![类加载器信息](/images/watoud/jdkTools/jmap/jmap-clstats.png)   <br/>
 
 4. jinfo: 获取Java进程的配置信息 <br/>
 获取Java进程的配置信息： <b> jinfo *pid* </b> <br/>
-	<center> ![Java进程配置信息](/assets/images/jdkTools/jinfo/jinfo.png) </center> <br/>
+	  ![Java进程配置信息](/images/watoud/jdkTools/jinfo/jinfo.png)   <br/>
 
 5. jhat：分析Java堆,以html的形式显示出来 <br/>
 执行命令： <b> jhat */dump/file/path*  </b> <br/>
-	<center> ![Jhat读取dump文件](/assets/images/jdkTools/jhat/jhat-server.png) </center> <br/>
+	 ![Jhat读取dump文件](/images/watoud/jdkTools/jhat/jhat-server.png)  <br/>
 之后就可以使用浏览器在本地查看Java分析信息了 <br/>
-	<center> ![浏览dump信息](/assets/images/jdkTools/jhat/jhat-client.png) </center> <br/>
+	  ![浏览dump信息](/images/watoud/jdkTools/jhat/jhat-client.png)  <br/>
 我们可以从页面上查询所有的类、根对象、对象实例数等等 <br/>
-	<center> ![浏览实例信息](/assets/images/jdkTools/jhat/jhat-instance.png) </center> <br/>
+	  ![浏览实例信息](/images/watoud/jdkTools/jhat/jhat-instance.png)   <br/>
 堆dump文件的分析,除了使用jdk自带的jhat外，还可以用Eclipse MAT工具 <br/>
 
 6. jstat：获取JVM性能以及资源消耗信息 <br/>
 查看GC信息：<b>  jstat -gcutil *pid* *interval* *count* </b> <br/>
-	<center> ![浏览实例信息](/assets/images/jdkTools/jstat/jstat-gcutil.png) </center> <br/>
+	  ![浏览实例信息](/images/watoud/jdkTools/jstat/jstat-gcutil.png)  <br/>
 查看元空间信息：<b>  jstat -gcmetacapacity *pid* *interval* *count* </b> <br/>
- 	<center> ![浏览实例信息](/assets/images/jdkTools/jstat/jstat-metaspace.png) </center> <br/>
+ 	  ![浏览实例信息](/images/watoud/jdkTools/jstat/jstat-metaspace.png)   <br/>
 
 <div align="right" >
 <font color="purple">

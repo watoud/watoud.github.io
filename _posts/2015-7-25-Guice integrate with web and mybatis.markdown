@@ -10,7 +10,7 @@ tags: guice
 1. 创建web工程    
 首先在eclipse中创建一个maven工程，修改工程中的pom.xml文件，在project节点下面添加```<packaging>war</packaging>```。然后在src/main目录下依次创建webapp/WEB-INF目录，再在WEB-INF目录下创建web.xml文件。这样一个使用maven进行依赖管理的web工程就搭建起来了，工程创建好后的目录结构如下图所示。
 
-![](/assets/images/guice-web.png)
+![](/images/watoud/guice-web.png)
 
 2.在pom.xml中添加maven依赖配置
 
@@ -130,7 +130,7 @@ public class MyGuiceServletConfig extends GuiceServletContextListener
 
 7.打包并运行
 使用maven命令打包，把war放到tomcat的webapps目录下，然后启动tomcat，使用浏览器访问，就能在浏览器中看到如下所示结果了。
-![](/assets/images/guice-web-result.png)
+![](/images/watoud/guice-web-result.png)
 
 ### guice与mybatis的整合
 1.在web.xml中添加如下maven依赖配置
@@ -363,7 +363,7 @@ public class HelloWorldServlet extends HttpServlet
 
 7.打包并运行
 使用maven命令打包并在tomcat中运行，就能在浏览器中看到如下所示结果了。   
-![](/assets/images/guice-mybatis.png)
+![](/images/watoud/guice-mybatis.png)
 
 ### 参考资料
 Guice与web整合:[https://github.com/google/guice/wiki/Servlets](https://github.com/google/guice/wiki/Servlets)    

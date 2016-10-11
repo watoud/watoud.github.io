@@ -188,7 +188,7 @@ function Engineer()
 Engineer.prototype = Object.create(WorkerBee.prototype);
 ```
 
-![对象的继承关系](/assets/images/JavaScript/object/object-inherit.png)
+![对象的继承关系](/images/watoud/JavaScript/object/object-inherit.png)
 
 
 

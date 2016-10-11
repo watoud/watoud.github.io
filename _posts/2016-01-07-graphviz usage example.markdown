@@ -17,9 +17,9 @@ digraph simple
 ```
 
 其中```digraph```指明图的类型为有向图，```simple```为这个有向图的名称， ```a```、```b```等代表节点，而```->```则代表节点之间的有向边，上述语句编译后生成的图片如下图所示。
-<center>
-![生成的图片](/assets/images/graphviz/simple-none.png)
-</center>
+ 
+![生成的图片](/images/watoud/graphviz/simple-none.png)
+ 
 <br/>
 
 如果需要对节点```a```的形状和颜色进行控制，比方说形状改为方形，颜色改为红色。
@@ -36,9 +36,9 @@ digraph simple
 ```
 
 在上述语句中，```[]```是对节点或者边的属性进行设置，```shape```设置节点的形状，```style```设置节点的风格，```fillcolor```设置节点的填充颜色，上述语句编译后生成的图片如下图所示。
-<center>
-![生成的图片](/assets/images/graphviz/simple-2.png) <br/>
-</center>
+ 
+![生成的图片](/images/watoud/graphviz/simple-2.png) <br/>
+ 
 <br/>
 
 给节点或者边添加文本，比如给节点```a```添加文本*start*，```b```添加文件*this is a test*，```a```到```b```的边添加文本*ready*，同时节点```b```希望以纯文本的形式展现等等。
@@ -63,9 +63,9 @@ digraph simple
 ```
 
 在上述语句中，```fontcolor```设置字体的颜色，```width```设置节点的大小，```margin```设置节点与边的距离，上述语句执行后生成如下图片。
-<center>
-![生成的图片](/assets/images/graphviz/simple-3.png)
-</center>
+
+![生成的图片](/images/watoud/graphviz/simple-3.png)
+
 <br/>
 
 ### 组合图
@@ -100,9 +100,9 @@ digraph binaryTree
 ```
 
 上述语句执行后生成如下图所示，语句中的颜色名称可以从链接 (http://www.graphviz.org/content/color-names) 中查看。
-<center>
-![生成的图片](/assets/images/graphviz/simple-4.png)
-</center>
+ 
+![生成的图片](/images/watoud/graphviz/simple-4.png)
+ 
 <br/>
 
 ```
@@ -117,12 +117,12 @@ digraph structs
 }
 ```
 
-上述语句生成的图形如右图所示 ![生成的图片](/assets/images/graphviz/simple-5.png) <br/>
+上述语句生成的图形如右图所示 ![生成的图片](/images/watoud/graphviz/simple-5.png) <br/>
 
 在有向图```structs```中加上语句```rankdir = "LR";```后生成如下所示图片。
-<center>
-![生成的图片](/assets/images/graphviz/simple-6.png)
-</center>
+
+![生成的图片](/images/watoud/graphviz/simple-6.png)
+
 <br/>
 
 有关上述标签语法的使用详情请见官方文档说明 (http://www.graphviz.org/content/node-shapes#record) <br/>
@@ -177,7 +177,7 @@ digraph structs
 }
 ```
 
-上述语句生成如右所示图片 ![生成的图片](/assets/images/graphviz/simple-8.png) <br/>
+上述语句生成如右所示图片 ![生成的图片](/images/watoud/graphviz/simple-8.png) <br/>
 
 
 ```
@@ -211,7 +211,7 @@ digraph G {
 	end [shape=Msquare];
 }
 ```
-上述语句生成的图形如右图所示 ![生成的图片](/assets/images/graphviz/simple-7.png) <br/>
+上述语句生成的图形如右图所示 ![生成的图片](/images/watoud/graphviz/simple-7.png) <br/>
 
 
 ### 阅读资料
