@@ -1,5 +1,5 @@
-title:            精擅吾艺
-description:      Describe your website here.
+title:            精擅吾艺 勤学不辍
+description:      ## Describe your website here.
 disqus_shortname: 
 reading_time:     true
 words_per_minute: 200
@@ -35,7 +35,8 @@ google_verify:
 bing_verify:         
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    America/New_York
+##America/New_York
+timezone:     Asia/Shanghai 
 future:      false  # publish future dated posts --  true, false (default) 
 highlighter: rouge
 markdown:    kramdown
