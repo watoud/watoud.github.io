@@ -34,7 +34,7 @@ tag: gradle
 
 ### 阅读资料
 > - https://gradle.org/install/
-> - http://www.vogella.com/tutorials/EclipseGradle/article.html
+> - https://guides.gradle.org/building-java-applications/
 > - http://www.vogella.com/tutorials/EclipseGradle/article.html
 
 
