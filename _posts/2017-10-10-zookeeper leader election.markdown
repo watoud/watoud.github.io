@@ -70,10 +70,10 @@ return ((newEpoch > curEpoch) || //
 
 #### 数据同步
 &emsp;&emsp;选出主节点之后，接着就是节点之间的数据同步。
-- 1. **followr节点注册**  leader节点为每个连接关联一个**LearnerHandler**，并启动消息处理线程。follower节点连上leader之后，立即发送一个**FOLLOWERINFO**信息过去，包含了自身的节点ID以及上一轮接受的epoch。leader等待半数以上的follower都发来**FOLLOWERINFO**消息之后，计算出当前轮次的epoch，相关代码如下。     
+1. **followr节点注册**  leader节点为每个连接关联一个**LearnerHandler**，并启动消息处理线程。follower节点连上leader之后，立即发送一个**FOLLOWERINFO**信息过去，包含了自身的节点ID以及上一轮接受的epoch。leader等待半数以上的follower都发来**FOLLOWERINFO**消息之后，计算出当前轮次的epoch。
 
 接着，leader给follower发送**LEADERINFO**消息，该消息包含了**newLeaderZxid**，该值由两部分组成，高32位为上一步得到的epoch，低32位为0。follower接收到该消息后会更新自身当前的epoch，然后向leader发送**ACKEPOCH**，该消息中包含了最新的zxid。leader等待半数以上的follower节点都发送了**ACKEPOCH**消息之后，接着就进入了数据同步阶段。
-- 2. **数据同步** leader根据follower节点发送的**ACKEPOCH**消息中的zxid来确定如何跟对应的follower来同步数据。如果follower跟leader已经是同步的，即follower的lastZxid与leader的lastZxid相同，这个时候，leader只需要发送一个空的**DIFF**消息。如果follower的lastZxid大于leader的lastZxid，则说明follower的数据超前了，leader发送一个**TRUNC**消息。如果如果follower的lastZxid大于leader的lastZxid，则先发一个**DIFF**消息，接着将leader中多的事务消息一次发送给follower，其他一些特殊情况则发送**SNAP**消息。最后发送一个**NEWLEADER**消息，然后leader开始等待follower的**ACK**消息。follower根据消息不同，分别处理**TRUNC**、**DIFF**和**SNAP**消息，之后向leader返回**ACK**消息。最后leader等待半数以上的follower返回**ACK**之后，接着向follower发送**UPTODATE**消息，这个时候数据同步结束。
+2. **数据同步** leader根据follower节点发送的**ACKEPOCH**消息中的zxid来确定如何跟对应的follower来同步数据。如果follower跟leader已经是同步的，即follower的lastZxid与leader的lastZxid相同，这个时候，leader只需要发送一个空的**DIFF**消息。如果follower的lastZxid大于leader的lastZxid，则说明follower的数据超前了，leader发送一个**TRUNC**消息。如果如果follower的lastZxid大于leader的lastZxid，则先发一个**DIFF**消息，接着将leader中多的事务消息一次发送给follower，其他一些特殊情况则发送**SNAP**消息。最后发送一个**NEWLEADER**消息，然后leader开始等待follower的**ACK**消息。follower根据消息不同，分别处理**TRUNC**、**DIFF**和**SNAP**消息，之后向leader返回**ACK**消息。最后leader等待半数以上的follower返回**ACK**之后，接着向follower发送**UPTODATE**消息，这个时候数据同步结束。
 
 ### 阅读资料
 > - http://zookeeper.apache.org/doc/r3.5.3-beta/zookeeperObservers.html
